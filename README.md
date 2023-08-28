@@ -30,3 +30,4 @@ sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/ubuntu/22.04
 sudo umount /media
 sudo nano /mnt/data/netboot/pxelinux.cfg/default
 sudo systemctl restart dnsmasq
+python3 -m http.server 8111 -d /mnt/data/isos/ &
