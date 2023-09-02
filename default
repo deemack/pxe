@@ -16,7 +16,6 @@ DEFAULT     vesamenu.c32
                 KERNEL ::boot/amd64/debian/10/install.amd/vmlinuz
                 APPEND vga=788 initrd=::boot/amd64/debian/10/install.amd/gtk/initrd.gz --- quiet
 
-
             LABEL install
                 MENU LABEL ^Install
                 KERNEL ::boot/amd64/debian/10/install.amd/vmlinuz
@@ -31,18 +30,8 @@ DEFAULT     vesamenu.c32
                 MENU label Ubuntu Desktop 22.04.3
                 KERNEL ::boot/amd64/ubuntu/22.04/casper/vmlinuz
                 INITRD ::boot/amd64/ubuntu/22.04/casper/initrd
-                APPEND vga=788 ip=dhcp url=http://192.168.1.237:8111/ubuntu-22.04.iso root=/dev/ram0 ramdisk_size=15000>
+                APPEND vga=788 ip=dhcp url=http://192.168.1.237:8111/ubuntu-22.04.iso root=/dev/ram0 ramdisk_size=15000 file=/cdrom/preseed/ubuntu.seed maybe-ubiquity --
 
            MENU END
 
-        MENU BEGIN Ubuntu2
-        MENU TITLE Ubuntu2
-
-            LABEL install
-                MENU label Ubuntu Desktop 22.04.3 pc
-                KERNEL ::boot/amd64/ubuntu/22.04/casper/vmlinuz
-                INITRD ::boot/amd64/ubuntu/22.04/casper/initrd
-                APPEND ip=dhcp url=http://192.168.1.158:8111/ubuntu-22.04.iso root=/dev/ram0 ramdisk_size=15000 file=/c>
-
-           MENU END
     MENU END
