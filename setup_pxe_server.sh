@@ -38,7 +38,7 @@ printf "${YELLOW}Ubuntu Desktop${NC}\n"
 sudo wget -N https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso
 printf "${YELLOW}Debian${NC}\n"
 sudo wget -N https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
-cd ~
+cd ~/pxe
 
 printf "${GREEN}Copy BIOS modules to netboot/bios folder${NC}\n"
 sudo cp \
@@ -70,7 +70,11 @@ sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/debian/12.1
 sudo umount /media
 
 printf "${GREEN}Copy default pxelinux configuration file${NC}\n"
-sudo cp ./default /mnt/data/netboot/pxelinux.cfg/default
+sudo cp ./default /mnt/data/netboot/pxelinux.cfg/default  
+
+printf "${GREEN}Create symbolic links for pxelinux.cfg${NC}\n"
+cd /mnt/data/netboot
+sudo ln -rs pxelinux.cfg bios && sudo ln -rs pxelinux.cfg efi64
 
 printf "${GREEN}Restart dnsmasq service${NC}\n"
 sudo systemctl restart dnsmasq
