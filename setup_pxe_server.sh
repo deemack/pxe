@@ -4,6 +4,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 
 printf "${GREEN}Update Linux and install${NC}\n"
+sudo NEEDRESTART_MODE=a apt-get dist-upgrade --yes
 sudo apt-get update && sudo apt-get upgrade -y
 
 printf "${GREEN}Install packages${NC}\n"
