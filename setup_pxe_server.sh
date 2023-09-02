@@ -62,3 +62,6 @@ sudo cp ./deafault /mnt/data/netboot/pxelinux.cfg/default
 
 printf "${GREEN}Restart dnsmaq service${NC}\n"
 sudo systemctl restart dnsmasq
+
+printf "${GREEN}Start python webserver to serve ISOs${NC}\n"
+python3 -m http.server 8111 -d /mnt/data/isos/ &
