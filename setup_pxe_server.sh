@@ -21,12 +21,11 @@ printf "${GREEN}Modify dnsmasq.conf${NC}\n"
 cat dnsmasq.conf | sudo tee -a /etc/dnsmasq.conf
 
 printf "${GREEN}Create all required folders${NC}\n"
-sudo mkdir /mnt/data/isos
-sudo mkdir /mnt/data/netboot
-sudo mkdir /mnt/data/netboot/bios
-sudo mkdir /mnt/data/netboot/efi64
-sudo mkdir /mnt/data/netboot/boot
-sudo mkdir /mnt/data/netboot/pxelinux.cfg
+sudo mkdir -p /mnt/data/isos
+sudo mkdir -p /mnt/data/netboot/bios
+sudo mkdir -p /mnt/data/netboot/efi64
+sudo mkdir -p /mnt/data/netboot/boot
+sudo mkdir -p /mnt/data/netboot/pxelinux.cfg
 sudo mkdir -p /mnt/data/netboot/boot/amd64/ubuntu_server/22.04
 sudo mkdir -p /mnt/data/netboot/boot/amd64/ubuntu_desktop/22.04
 sudo mkdir -p /mnt/data/netboot/boot/amd64/debian/12.1
@@ -71,7 +70,7 @@ sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/debian/12.1
 sudo umount /media
 
 printf "${GREEN}Copy default pxelinux configuration file${NC}\n"
-sudo cp ./deafault /mnt/data/netboot/pxelinux.cfg/default
+sudo cp ./default /mnt/data/netboot/pxelinux.cfg/default
 
 printf "${GREEN}Restart dnsmasq service${NC}\n"
 sudo systemctl restart dnsmasq
