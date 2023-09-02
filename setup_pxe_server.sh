@@ -26,8 +26,6 @@ sudo mkdir /mnt/data/netboot
 sudo mkdir /mnt/data/netboot/bios
 sudo mkdir /mnt/data/netboot/efi64
 sudo mkdir /mnt/data/netboot/boot
-sudo mkdir /mnt/data/netboot/boot/amd64/ubuntu
-sudo mkdir /mnt/data/netboot/boot/amd64/ubuntu/22.04
 sudo mkdir /mnt/data/netboot/pxelinux.cfg
 sudo mkdir -p /mnt/data/netboot/boot/amd64/ubuntu_server/22.04
 sudo mkdir -p /mnt/data/netboot/boot/amd64/ubuntu_desktop/22.04
