@@ -33,11 +33,11 @@ sudo mkdir -p /mnt/data/netboot/boot/amd64/debian/12.1
 printf "${GREEN}Download ISOs:${NC}\n"
 cd /mnt/data/isos
 printf "${YELLOW}Ubuntu Server${NC}\n"
-sudo wget https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso
+sudo wget -N https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso
 printf "${YELLOW}Ubuntu Desktop${NC}\n"
-sudo wget https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso
+sudo wget -N https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso
 printf "${YELLOW}Debian${NC}\n"
-sudo wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
+sudo wget -N https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
 cd ~
 
 printf "${GREEN}Copy BIOS modules to netboot/bios folder${NC}\n"
