@@ -48,6 +48,7 @@ sudo cp \
 
 printf "${GREEN}Mount ISO and copy to /media directories${NC}\n"
 printf "${YELLOW}Ubuntu Server${NC}\n"
+sudo umount /media
 sudo mount -o loop -t iso9660 /mnt/data/isos/ubuntu-22.04.3-live-server-amd64.iso /media
 sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/ubuntu/22.04
 sudo umount /media
