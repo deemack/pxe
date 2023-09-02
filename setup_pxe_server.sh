@@ -3,8 +3,13 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 
+printf "${GREEN}Disable resolved which uses port 53${NC}\n"
+sudo systemctl stop systemd-resolved
+sudo systemctl disable systemd-resolved
+sudo systemctl mask systemd-resolved
+
 printf "${GREEN}Update Linux and install dnsmasq, pxelinux, and syslinux-efi${NC}\n"
-sudo apt-get update && sudo apt-get install dnsmasq pxelinux syslinux-efi
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install dnsmasq pxelinux syslinux-efi
 
 printf "${GREEN}Create all required folders${NC}\n"
 sudo mkdir /mnt/data/isos
