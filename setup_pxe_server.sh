@@ -19,6 +19,10 @@ sudo apt-get install  dnsmasq -y
 printf "${GREEN}Modify dnsmasq.conf${NC}\n"
 cat dnsmasq.conf | sudo tee -a /etc/dnsmasq.conf
 
+printf "${GREEN}Restart dnsmasq service${NC}\n"
+sudo systemctl restart dnsmasq
+sudo systemctl status dnsmasq
+
 printf "${GREEN}Create all required folders${NC}\n"
 sudo mkdir /mnt/data/isos
 sudo mkdir /mnt/data/netboot
