@@ -3,8 +3,18 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 
-printf "${GREEN}Update Linux and install dnsmasq, pxelinux, and syslinux-efi${NC}\n"
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install dnsmasq pxelinux syslinux-efi
+printf "${GREEN}Update Linux and install${NC}\n"
+sudo apt-get update && sudo apt-get upgrade -y
+
+printf "${GREEN}Install packages${NC}\n"
+printf "${YELLOW}pxelinux${NC}\n"
+sudo apt-get install pxelinux -y
+
+printf "${YELLOW}syslinux-efi${NC}\n"
+sudo apt-get install syslinux-efi -y
+
+printf "${YELLOW}dnsmasq${NC}\n"
+sudo apt-get install  dnsmasq -y
 
 printf "${GREEN}Modify dnsmasq.conf${NC}\n"
 cat dnsmasq.conf | sudo tee -a /etc/dnsmasq.conf
