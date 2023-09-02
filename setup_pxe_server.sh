@@ -20,10 +20,6 @@ sudo apt-get install  dnsmasq -y
 printf "${GREEN}Modify dnsmasq.conf${NC}\n"
 cat dnsmasq.conf | sudo tee -a /etc/dnsmasq.conf
 
-printf "${GREEN}Restart dnsmasq service${NC}\n"
-sudo systemctl restart dnsmasq
-sudo systemctl status dnsmasq
-
 printf "${GREEN}Create all required folders${NC}\n"
 sudo mkdir /mnt/data/isos
 sudo mkdir /mnt/data/netboot
@@ -79,8 +75,9 @@ sudo umount /media
 printf "${GREEN}Copy default pxelinux configuration file${NC}\n"
 sudo cp ./deafault /mnt/data/netboot/pxelinux.cfg/default
 
-printf "${GREEN}Restart dnsmaq service${NC}\n"
+printf "${GREEN}Restart dnsmasq service${NC}\n"
 sudo systemctl restart dnsmasq
+sudo systemctl status dnsmasq
 
 printf "${GREEN}Start python webserver to serve ISOs${NC}\n"
 python3 -m http.server 8111 -d /mnt/data/isos/ &
