@@ -23,15 +23,25 @@ DEFAULT     vesamenu.c32
 
             MENU END
 
-        MENU BEGIN Ubuntu
-        MENU TITLE Ubuntu
+        MENU BEGIN Ubuntu Desktop
+        MENU TITLE Ubuntu Desktop 22.04.3
 
             LABEL install
                 MENU label Ubuntu Desktop 22.04.3
-                KERNEL ::boot/amd64/ubuntu/22.04/casper/vmlinuz
-                INITRD ::boot/amd64/ubuntu/22.04/casper/initrd
-                APPEND vga=788 ip=dhcp url=http://192.168.1.237:8111/ubuntu-22.04.iso root=/dev/ram0 ramdisk_size=15000 file=/cdrom/preseed/ubuntu.seed maybe-ubiquity --
+                KERNEL ::boot/amd64/ubuntu_desktop/22.04/casper/vmlinuz
+                INITRD ::boot/amd64/ubuntu_desktop/22.04/casper/initrd
+                APPEND vga=788 ip=dhcp url=http://127.0.0.1:8111/ubuntu-22.04.3-desktop-amd64.iso root=/dev/ram0 ramdisk_size=15000 file=/cdrom/preseed/ubuntu.seed maybe-ubiquity --
 
            MENU END
 
+        MENU BEGIN Ubuntu Server
+        MENU TITLE Ubuntu Server 22.04.3
+
+            LABEL install
+                MENU label Ubuntu Desktop 22.04.3
+                KERNEL ::boot/amd64/ubuntu_server/22.04/casper/vmlinuz
+                INITRD ::boot/amd64/ubuntu_server/22.04/casper/initrd
+                APPEND vga=788 ip=dhcp url=http://127.0.0.1:8111/ubuntu-22.04.3-live-server-amd64.iso root=/dev/ram0 ramdisk_size=15000 file=/cdrom/preseed/ubuntu.seed maybe-ubiquity --
+
+           MENU END
     MENU END
