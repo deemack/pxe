@@ -13,13 +13,13 @@ DEFAULT     vesamenu.c32
 
             LABEL installgui
                 MENU LABEL ^Graphical install
-                KERNEL ::boot/amd64/debian/10/install.amd/vmlinuz
-                APPEND vga=788 initrd=::boot/amd64/debian/10/install.amd/gtk/initrd.gz --- quiet
+                KERNEL ::boot/amd64/debian/12.1/install.amd/vmlinuz
+                APPEND vga=788 initrd=::boot/amd64/debian/12.1/install.amd/gtk/initrd.gz --- quiet
 
             LABEL install
                 MENU LABEL ^Install
-                KERNEL ::boot/amd64/debian/10/install.amd/vmlinuz
-                APPEND vga=788 initrd=::boot/amd64/debian/10/install.amd/initrd.gz --- quiet
+                KERNEL ::boot/amd64/debian/12.1/install.amd/vmlinuz
+                APPEND vga=788 initrd=::boot/amd64/debian/12.1/install.amd/initrd.gz --- quiet
 
             MENU END
 
