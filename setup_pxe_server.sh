@@ -73,17 +73,14 @@ printf "${GREEN}Mount ISO and copy to /media directories: Try Virtual${NC}\n"
 printf "${YELLOW}Ubuntu Server - Virtual Machine${NC}\n"
 isopath=$(sudo lsblk | grep Ubuntu-Server | cut -f2- -d/)
 sudo rsync -av /"$isopath" /mnt/data/netboot/boot/amd64/ubuntu_server/22.04
-sudo umount /media
 
 printf "${YELLOW}Ubuntu Desktop - Virtual Machine${NC}\n"
 isopath=$(sudo lsblk | grep 'Ubuntu ' | cut -f2- -d/)
 sudo rsync -av /"$isopath" /mnt/data/netboot/boot/amd64/ubuntu_desktop/22.04
-sudo umount /media
 
 printf "${YELLOW}Debian - Virtual Machine${NC}\n"
 isopath=$(sudo lsblk | grep Debian | cut -f2- -d/)
 sudo rsync -av /"$isopath" /mnt/data/netboot/boot/amd64/debian/12.1
-sudo umount /media
 
 printf "${GREEN}Copy default pxelinux configuration file${NC}\n"
 sudo cp ./default /mnt/data/netboot/pxelinux.cfg/default  
