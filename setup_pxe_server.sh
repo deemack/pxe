@@ -9,7 +9,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 printf "${GREEN}Install packages${NC}\n"
 printf "${YELLOW}nginx${NC}\n"
-sudo apt-get install nginx
+sudo apt-get install nginx -y
 
 printf "${YELLOW}pxelinux${NC}\n"
 sudo apt-get install pxelinux -y
