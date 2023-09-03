@@ -3,6 +3,9 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 
+printf "${GREEN}Set working directory${NC}\n"
+cd ~/pxe
+
 printf "${GREEN}Update Linux and install${NC}\n"
 sudo sed -i "/#\$nrconf{restart} = 'i';/s/.*/\$nrconf{restart} = 'a';/" /etc/needrestart/needrestart.conf
 sudo apt-get update && sudo apt-get upgrade -y
@@ -96,15 +99,14 @@ sudo sed -i "s/127.0.0.1/$webserver_ip_trimmed/g" /mnt/data/netboot/pxelinux.cfg
 printf "${GREEN}Create symbolic links for pxelinux.cfg${NC}\n"
 cd /mnt/data/netboot
 sudo ln -rs pxelinux.cfg bios && sudo ln -rs pxelinux.cfg efi64
+cd ~/pxe
 
 printf "${GREEN}Restart dnsmasq service${NC}\n"
 sudo systemctl restart dnsmasq
 
-printf "${GREEN}Setup the Nginx Server${NC}\n"
+printf "${GREEN}Copy nginx config file${NC}\n"
 sudo cp ./static-file-server.conf /etc/nginx/conf.d/static-file-server.conf
 
 printf "${GREEN}Enable and restart the Nginx service${NC}\n"
 sudo systemctl enable nginx
 sudo systemctl start nginx
-
-
