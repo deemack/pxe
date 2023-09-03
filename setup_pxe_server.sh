@@ -8,15 +8,8 @@ sudo sed -i "/#\$nrconf{restart} = 'i';/s/.*/\$nrconf{restart} = 'a';/" /etc/nee
 sudo apt-get update && sudo apt-get upgrade -y
 
 printf "${GREEN}Install packages${NC}\n"
-
-printf "${YELLOW}git${NC}\n"
-sudo apt-get install git -y
-
 printf "${YELLOW}nginx${NC}\n"
 sudo apt-get install nginx
-
-printf "${YELLOW}OpenSSH${NC}\n"
-sudo apt-get install openssh-server -y
 
 printf "${YELLOW}pxelinux${NC}\n"
 sudo apt-get install pxelinux -y
