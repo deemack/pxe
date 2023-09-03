@@ -1,14 +1,15 @@
 # pxe server - VM or physical server
 
-Tested on Raspberry Pi
+**Tested on Raspberry Pi**
 - Flash Pi OS to your raspberry pi
-- Run the following commands
+- Run the following:
 ```
 git clone https://github.com/deemack/pxe.git && cd pxe && sudo chmod +x setup_pxe_server.sh && bash setup_pxe_server.sh
 ```
 
-Tested on Virtual Box VM running Ubuntu Desktop 22.04.3
+**Tested on Virtual Box VM running Ubuntu Desktop 22.04.3**
 - Install Ubuntu onto the VM with a hard disk space of at least 50G
+- Install OpenSSH and Git
 - Mount the ISOs to the VM as CD-ROM devices via the VirtualBox GUI
 - Controller: AHCI  
   - debian-12.1.0-amd64-netinst.iso
@@ -21,4 +22,8 @@ Tested on Virtual Box VM running Ubuntu Desktop 22.04.3
 sr0     11:0    1   627M  0 rom  /media/dave/Debian 12.1.0 amd64 n
 sr1     11:1    1   4.7G  0 rom  /media/dave/Ubuntu 22.04.3 LTS amd64
 sr2     11:2    1     2G  0 rom  /media/dave/Ubuntu-Server 22.04.3 LTS amd64
+````
+- Run the follwowing:
+````
+git clone https://github.com/deemack/pxe.git && cd pxe && sudo chmod +x setup_pxe_server.sh && bash setup_pxe_server.sh
 ````
