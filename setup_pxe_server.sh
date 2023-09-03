@@ -12,6 +12,9 @@ printf "${GREEN}Install packages${NC}\n"
 printf "${YELLOW}git${NC}\n"
 sudo apt-get install git -y
 
+printf "${YELLOW}nginx${NC}\n"
+sudo apt-get install nginx
+
 printf "${YELLOW}OpenSSH${NC}\n"
 sudo apt-get install openssh-server -y
 
@@ -104,5 +107,11 @@ sudo ln -rs pxelinux.cfg bios && sudo ln -rs pxelinux.cfg efi64
 printf "${GREEN}Restart dnsmasq service${NC}\n"
 sudo systemctl restart dnsmasq
 
-printf "${GREEN}Start python webserver to serve ISOs${NC}\n"
-python3 -m http.server 8111 -d /mnt/data/isos/ &
+printf "${GREEN}Setup the Nginx Server${NC}\n"
+sudo cp ./static-file-server.conf /etc/nginx/conf.d/static-file-server.conf
+
+printf "${GREEN}Enable and restart the Nginx service${NC}\n"
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+
