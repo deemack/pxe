@@ -83,7 +83,12 @@ isopath=$(sudo lsblk | grep Debian | cut -f2- -d/)
 sudo rsync -av /"$isopath"/ /mnt/data/netboot/boot/amd64/debian/12.1
 
 printf "${GREEN}Copy default pxelinux configuration file${NC}\n"
-sudo cp ./default /mnt/data/netboot/pxelinux.cfg/default  
+sudo cp ./default /mnt/data/netboot/pxelinux.cfg/default
+
+printf "${GREEN}Update webserver address of default pxelinux configuration file${NC}\n"
+webserver_ip=$(hostname -I)
+webserver_ip_trimmed=(`echo $webserver_ip | xargs`)
+sudo sed -i "s/127.0.0.1/$webserver_ip_trimmed/g" /mnt/data/netboot/pxelinux.cfg/default
 
 printf "${GREEN}Create symbolic links for pxelinux.cfg${NC}\n"
 cd /mnt/data/netboot
