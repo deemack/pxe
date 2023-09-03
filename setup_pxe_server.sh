@@ -60,20 +60,20 @@ sudo cp \
 
 printf "${GREEN}Mount ISO and copy to /media directories: Try Physical${NC}\n"
 printf "${YELLOW}Ubuntu Server - Physical Machine${NC}\n"
-sudo umount /media
-sudo mount -o loop -t iso9660 /mnt/data/isos/ubuntu-22.04.3-live-server-amd64.iso /media
-sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/ubuntu_server/22.04
-sudo umount /media
+#sudo umount /media
+#sudo mount -o loop -t iso9660 /mnt/data/isos/ubuntu-22.04.3-live-server-amd64.iso /media
+#sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/ubuntu_server/22.04
+#sudo umount /media
 
 printf "${YELLOW}Ubuntu Desktop - Physical Machine${NC}\n"
-sudo mount -o loop -t iso9660 /mnt/data/isos/ubuntu-22.04.3-desktop-amd64.iso /media
-sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/ubuntu_desktop/22.04
-sudo umount /media
+#sudo mount -o loop -t iso9660 /mnt/data/isos/ubuntu-22.04.3-desktop-amd64.iso /media
+#sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/ubuntu_desktop/22.04
+#sudo umount /media
 
 printf "${YELLOW}Debian - Physical Machine${NC}\n"
-sudo mount -o loop -t iso9660 /mnt/data/isos/debian-12.1.0-amd64-netinst.iso /media
-sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/debian/12.1
-sudo umount /media
+#sudo mount -o loop -t iso9660 /mnt/data/isos/debian-12.1.0-amd64-netinst.iso /media
+#sudo rsync -av /media/ /mnt/data/netboot/boot/amd64/debian/12.1
+#sudo umount /media
 
 printf "${GREEN}Mount ISO and copy to /media directories: Try Virtual${NC}\n"
 printf "${YELLOW}Ubuntu Server - Virtual Machine${NC}\n"
