@@ -109,4 +109,4 @@ sudo cp ./static-file-server.conf /etc/nginx/conf.d/static-file-server.conf
 
 printf "${GREEN}Enable and restart the Nginx service${NC}\n"
 sudo systemctl enable nginx
-sudo systemctl start nginx
+sudo systemctl restart nginx
