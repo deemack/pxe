@@ -1,13 +1,14 @@
 # pxe server - VM or physical server
 
-**Tested on Raspberry Pi** Verifed working
+**Tested on Raspberry Pi** - _**Verified working**_
 - Flash Pi OS to your raspberry pi
 - Run the following:
 ```
+sudo apt-get install -y git
 git clone https://github.com/deemack/pxe.git && cd pxe && sudo chmod +x setup_pxe_server.sh && bash setup_pxe_server.sh
 ```
 
-**Tested on Virtual Box VM running Ubuntu Desktop 22.04.3** Not working
+**Tested on Virtual Box VM running Ubuntu Desktop 22.04.3** - _**Not working**_
 - Install Ubuntu onto the VM with a hard disk space of at least 50G
 - Turn off the VM
 - Mount the ISOs to the VM as CD-ROM devices via the VirtualBox GUI
