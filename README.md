@@ -1,4 +1,4 @@
-# pxe server - VM or physical server
+# pxe server
 
 **Tested on Raspberry Pi** - _**Verified working**_
 - Flash Pi OS to your raspberry pi
@@ -7,7 +7,9 @@
 sudo apt-get install -y git
 git clone https://github.com/deemack/pxe.git && cd pxe && sudo chmod +x setup_pxe_server.sh && bash setup_pxe_server.sh
 ```
+- You can now PXE boot devices from your Raspberry Pi.
 
+  
 **Tested on Virtual Box VM running Ubuntu Desktop 22.04.3** - _**Not working**_
 - Install Ubuntu onto the VM with a hard disk space of at least 50G
 - Turn off the VM
