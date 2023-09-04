@@ -28,7 +28,7 @@ cat dnsmasq.conf | sudo tee -a /etc/dnsmasq.conf
 
 printf "${GREEN}Set interface name of server in dnsmasq.conf${NC}\n"
 interface=`netstat -ie | grep -B1 "192.168.1.237" | awk '{print $1}' | cut -f1 -d":" | sed '2d'`
-sudo sed -i "s/wlan0/$interface/g" /etc/dnsmasq.conf
+sudo sed -i "s/placeholder/$interface/g" /etc/dnsmasq.conf
 
 printf "${GREEN}Create all required folders${NC}\n"
 sudo mkdir -p /mnt/data/isos
